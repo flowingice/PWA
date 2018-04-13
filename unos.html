@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/img/circle_logo_fav.png" type="image/gif" sizes="16x16">
+    <title>Ehop</title>
+</head>
+<body>
+<nav>
+    <figure class="float_left">
+        <a href="index.html">
+            <img src="/img/circle_logo.png" alt="Ovo je nevidljivi opis jedne slike">
+        </a>
+    </figure>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="onama.html">O nama</a></li>
+        <li><a href="#">Kontakt</a></li>
+		<li><a href="unos.html">Predaj oglas</a></li>
+    </ul>
+</nav>
+<div id="main_content">
+
+        <form name="unos" action="skripta.php" method="post" class="forma">
+            <label for="naslov">Naslov proizvoda:</label>
+            <input id="naslov" type="text" name="naslov" />
+            <br>
+			<label for="sifra">Sifra proizvoda:</label>
+            <input id="sifra" type="text" name="sifra" />
+            <br>
+			<label for="kategorija">Kategorija proizvoda:</label>
+            <select name="kategorija">
+			  <option value="TV">TV</option>
+			  <option value="PC">PC</option>
+			  <option value="laptop">Laptop</option>
+			</select>
+            <br>
+			
+            <textarea name="opis" rows="5" cols="35" placeholder="Opis proizvoda:"></textarea>
+            <br>
+            
+			<label for="cijena">Cijena proizvoda:</label>
+            <input id="cijena" type="text" name="cijena" />
+            <br>
+			
+            <input type="checkbox" name="arhiviraj" value="arhiviraj" title="arhiviraj"/>Arhiviraj
+			<br>
+            <input type="submit" value="Submit">
+        </form>
+
+</div>
+	<div class="footer-spacing"> </div>
+    <footer class="clear_floating">
+        <p> Mate M.</p>
+        <p>Kontakt: <a href="mailto:mmisic@tvz.hr" target="_top">mmisic@tvz.hr</a></p>
+        <p id="last"><a href="unos.html">Predaj oglas</a></p>
+    </footer>
+</body>
+</html>
