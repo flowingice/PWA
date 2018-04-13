@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: filip
- * Date: 24.03.18.
- * Time: 15:19
- */
+
     $naslov = $_POST['naslov'];
     $sifra = $_POST['sifra'];
     $kategorija = $_POST['kategorija'];
