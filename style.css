@@ -195,4 +195,7 @@ body > nav > figure{
         width: 100%;
         margin: auto;
     }
+	input[type=submit] {
+		margin-bottom:120px;
+	}
 }

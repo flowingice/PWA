@@ -43,7 +43,7 @@
 		echo'<main>
         <article class="float_left">
             <header>
-                <h1>Invalid input</h1>
+                <h1>Invalid input </h1>
                 <span  class="article_lead">Please use proper way to input data</span>
             </header></article></main></body></html>';
 
@@ -77,6 +77,7 @@
         </article>
     </main>
 </div>
+<div class="footer-spacing">  </div>
     <footer class="clear_floating">
         <p> Mate M.</p>
         <p>Kontakt: <a href="mailto:mmisic@tvz.hr" target="_top">mmisic@tvz.hr</a></p>
