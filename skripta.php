@@ -1,14 +1,18 @@
 <?php
 
-    $naslov = $_POST['naslov'];
-    $sifra = $_POST['sifra'];
-    $kategorija = $_POST['kategorija'];
-    $opis = $_POST['opis'];
-	$cijena = $_POST['cijena'];
-	
-    $arhiviraj = (isset($_POST['arhiviraj']) ? $_POST['arhiviraj'] : null);;
 
-    echo '
+	
+	// Required field names
+	$required = array('naslov', 'sifra', 'kategorija', 'opis', 'cijena');
+
+	// Loop over field names, make sure each one exists and is not empty
+	$error = false;
+	foreach($required as $field) {
+		if (empty($_POST[$field])) {
+			$error = true;
+		}
+	}
+	      echo '
 <!DOCTYPE html>
 <html lang="hr">
 <head>
@@ -33,6 +37,30 @@
 		<li><a href="unos.html">Predaj oglas</a></li>
     </ul>
 </nav>
+';
+	
+	if ($error) {
+		echo'<main>
+        <article class="float_left">
+            <header>
+                <h1>Invalid input</h1>
+                <span  class="article_lead">Please use proper way to input data</span>
+            </header></article></main></body></html>';
+
+} else {
+	$naslov = $_POST['naslov'];
+    $sifra = $_POST['sifra'];
+    $kategorija = $_POST['kategorija'];
+    $opis = $_POST['opis'];
+	$cijena = $_POST['cijena'];
+	
+    $arhiviraj = (isset($_POST['arhiviraj']) ? $_POST['arhiviraj'] : null);;
+ 
+
+
+    echo '
+
+
 <div id="main_content">
     <main>
         <article class="float_left">
@@ -56,5 +84,5 @@
     </footer>
 </body>
 </html>
-';
+';}
 ?>
