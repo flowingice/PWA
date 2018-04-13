@@ -26,10 +26,10 @@
 
         <form name="unos" action="skripta.php" method="post" class="forma">
             <label for="naslov">Naslov proizvoda:</label>
-            <input id="naslov" type="text" name="naslov" />
+            <input id="naslov" type="text" name="naslov" required/>
             <br>
 			<label for="sifra">Sifra proizvoda:</label>
-            <input id="sifra" type="text" name="sifra" />
+            <input id="sifra" type="text" name="sifra" required/>
             <br>
 			<label for="kategorija">Kategorija proizvoda:</label>
             <select name="kategorija">
@@ -39,11 +39,11 @@
 			</select>
             <br>
 			
-            <textarea name="opis" rows="5" cols="35" placeholder="Opis proizvoda:"></textarea>
+            <textarea name="opis" rows="5" cols="35" placeholder="Opis proizvoda:" required></textarea>
             <br>
             
 			<label for="cijena">Cijena proizvoda:</label>
-            <input id="cijena" type="text" name="cijena" />
+            <input id="cijena" type="text" name="cijena" required/>
             <br>
 			
             <input type="checkbox" name="arhiviraj" value="arhiviraj" title="arhiviraj"/>Arhiviraj
