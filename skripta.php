@@ -1,6 +1,6 @@
 <?php
 
-
+//dodaj active u mysql 
 	
 	// Required field names
 	$required = array('naslov', 'sifra', 'kategorija', 'opis', 'cijena');
@@ -85,5 +85,40 @@
     </footer>
 </body>
 </html>
-';}
+';
+	if($arhiviraj){
+		$active=1;
+	}else{
+		$arhiviraj=0;
+	}
+	$naslov = urlencode($naslov);
+    $sifra = urlencode($sifra);
+    $kategorija = urlencode($kategorija);
+    $opis = urlencode($opis);
+	$cijena = urlencode($cijena);
+	
+	$servername = "localhost";
+	$username = "username";
+	$password = "password";
+	$dbname = "oglasi";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} 
+
+	$sql = "INSERT INTO oglasitbl (naslov, sifra, kategorija, opis, cijena, active)
+	VALUES ('".$naslov."', '"$sifra."', '".$kategorija."', '".$opis."', '".$cijena."', '".$active.");";
+
+	if ($conn->query($sql) === TRUE) {
+		echo "New record created successfully";
+	} else {
+		echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+
+	$conn->close();
+
+}
 ?>

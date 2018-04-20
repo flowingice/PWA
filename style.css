@@ -2,6 +2,32 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.oglas{
+	width:23%;
+	min-width:150px;
+	float:left;
+	border: 2px solid black;
+	margin-left:8px;
+	margin-bottom: 10px;
+	//padding-left:20px;
+	//overflow:none;
+}
+
+.oglas>p{
+	padding-left:20px;
+	//overflow:none;
+}
+
+.oglas>h4{
+	text-align:center;
+}
+
+.oglas>img{
+	//margin-left:30px;
+	display:block;
+	margin:auto;
+	//margin-left:-20px;
+}
 
 html{
     width: 100%;
@@ -114,7 +140,7 @@ footer{
     color: white;
     background-color: #6552;
 	opacity:1;
-    position:fixed;
+    //position:fixed;
     bottom:0;
 }
 
