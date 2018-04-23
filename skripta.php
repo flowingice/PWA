@@ -1,6 +1,5 @@
 <?php
 
-//dodaj active u mysql 
 	
 	// Required field names
 	$required = array('naslov', 'sifra', 'kategorija', 'opis', 'cijena');
@@ -12,32 +11,8 @@
 			$error = true;
 		}
 	}
-	      echo '
-<!DOCTYPE html>
-<html lang="hr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="style.css" />
-    <link rel="icon" href="/img/circle_logo_fav.png" type="image/gif" sizes="16x16">
-    <title>Eshop</title>
-</head>
-<body>
-<nav>
-    <figure class="float_left">
-        <a href="index.html">
-            <img src="/img/circle_logo.png" alt=" ">
-        </a>
-    </figure>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="onama.html">O nama</a></li>
-        <li><a href="#">Kontakt</a></li>
-		<li><a href="unos.html">Predaj oglas</a></li>
-    </ul>
-</nav>
-';
+
+	require_once("printHeader.php");
 	
 	if ($error) {
 		echo'<main>
@@ -54,7 +29,43 @@
     $opis = $_POST['opis'];
 	$cijena = $_POST['cijena'];
 	
-    $arhiviraj = (isset($_POST['arhiviraj']) ? $_POST['arhiviraj'] : null);;
+	    $arhiviraj = (isset($_POST['arhiviraj']) ? $_POST['arhiviraj'] : null);;
+	
+		if($arhiviraj){
+		$active=1;
+	}else{
+		$active=0;
+	}
+	
+	    $finfo = new finfo(FILEINFO_MIME_TYPE);
+    if (false === $ext = array_search(
+        $finfo->file($_FILES['slika']['tmp_name']),
+        array(
+            'jpg' => 'image/jpeg',
+            'png' => 'image/png',
+            'gif' => 'image/gif',
+        ),
+        true
+    )) {
+        throw new RuntimeException('Invalid file format.');
+    }
+	
+	    // You should name it uniquely.
+    // DO NOT USE $_FILES['upfile']['name'] WITHOUT ANY VALIDATION !!
+    // On this example, obtain safe unique name from its binary data.
+	$target=sprintf('./userimg/%s.%s',
+            sha1_file($_FILES['slika']['tmp_name']),
+            $ext
+        );
+    if (!move_uploaded_file(
+        $_FILES['slika']['tmp_name'],
+        $target
+    )) {
+        throw new RuntimeException('Failed to move uploaded file.');
+    }
+
+	
+
  
 
 
@@ -77,20 +88,10 @@
         </article>
     </main>
 </div>
-<div class="footer-spacing">  </div>
-    <footer class="clear_floating">
-        <p> Mate M.</p>
-        <p>Kontakt: <a href="mailto:mmisic@tvz.hr" target="_top">mmisic@tvz.hr</a></p>
-        <p id="last"><a href="unos.html">Predaj oglas</a></p>
-    </footer>
-</body>
-</html>
 ';
-	if($arhiviraj){
-		$active=1;
-	}else{
-		$arhiviraj=0;
-	}
+
+
+
 	$naslov = urlencode($naslov);
     $sifra = urlencode($sifra);
     $kategorija = urlencode($kategorija);
@@ -98,8 +99,8 @@
 	$cijena = urlencode($cijena);
 	
 	$servername = "localhost";
-	$username = "username";
-	$password = "password";
+	$username = "root";
+	$password = "";
 	$dbname = "oglasi";
 
 	// Create connection
@@ -108,9 +109,10 @@
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} 
+	$conn->set_charset("utf8");
 
-	$sql = "INSERT INTO oglasitbl (naslov, sifra, kategorija, opis, cijena, active)
-	VALUES ('".$naslov."', '"$sifra."', '".$kategorija."', '".$opis."', '".$cijena."', '".$active.");";
+	$sql = "INSERT INTO oglasitbl (naslov, sifra, kategorija, opis, cijena, active, slika)
+	VALUES ('".$naslov."', '".$sifra."', '".$kategorija."', '".$opis."', '".$cijena."', '".$active."', '".$target."');";
 
 	if ($conn->query($sql) === TRUE) {
 		echo "New record created successfully";
@@ -119,6 +121,6 @@
 	}
 
 	$conn->close();
-
+require_once("printFooter.php");
 }
 ?>

@@ -1,13 +1,19 @@
 *{
     font-family: 'Open Sans', sans-serif;
+	    word-wrap: break-word;
+		
 }
 
 .oglas{
+	height:400px;
+	overflow: hidden
+	word-wrap: break-word;
 	width:23%;
 	min-width:150px;
 	float:left;
 	border: 2px solid black;
 	margin-left:8px;
+	margin-top:15px;
 	margin-bottom: 10px;
 	//padding-left:20px;
 	//overflow:none;
@@ -27,6 +33,8 @@
 	display:block;
 	margin:auto;
 	//margin-left:-20px;
+	height:72px;
+	width:72px;
 }
 
 html{
@@ -171,6 +179,7 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+	margin-bottom:50px;
 }
 
 input[type=submit]:hover {
@@ -224,4 +233,18 @@ body > nav > figure{
 	input[type=submit] {
 		margin-bottom:120px;
 	}
+	.oglas{
+	height:400px;
+	overflow: hidden
+	word-wrap: break-word;
+	width:99%;
+	min-width:150px;
+	float:left;
+	border: 2px solid black;
+	margin-left:8px;
+	margin-top:15px;
+	margin-bottom: 10px;
+	//padding-left:20px;
+	//overflow:none;
+}
 }

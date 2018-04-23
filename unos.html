@@ -20,11 +20,14 @@
         <li><a href="onama.html">O nama</a></li>
         <li><a href="#">Kontakt</a></li>
 		<li><a href="unos.html">Predaj oglas</a></li>
+		<li><a href="proizvodi.php">Proizvodi</a></li>
     </ul>
 </nav>
 <div id="main_content">
 
-        <form name="unos" action="skripta.php" method="post" class="forma">
+        <form enctype="multipart/form-data" name="unos"  action="skripta.php" method="post" class="forma">
+			
+			<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
             <label for="naslov">Naslov proizvoda:</label>
             <input id="naslov" type="text" name="naslov" required/>
             <br>
@@ -36,6 +39,7 @@
 			  <option value="TV">TV</option>
 			  <option value="PC">PC</option>
 			  <option value="laptop">Laptop</option>
+			   <option value="periferija">Periferija</option>
 			</select>
             <br>
 			
@@ -45,6 +49,7 @@
 			<label for="cijena">Cijena proizvoda:</label>
             <input id="cijena" type="text" name="cijena" required/>
             <br>
+			Slika: <br><input type="file" id="picture" name="slika" /><br><br>
 			
             <input type="checkbox" name="arhiviraj" value="arhiviraj" title="arhiviraj"/>Arhiviraj
 			<br>

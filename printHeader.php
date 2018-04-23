@@ -1,3 +1,6 @@
+	<?php    
+
+	echo '
 <!DOCTYPE html>
 <html lang="hr">
 <head>
@@ -12,30 +15,17 @@
 <nav>
     <figure class="float_left">
         <a href="index.html">
-            <img src="/img/circle_logo.png" alt=" ">
+            <img src="/img/circle_logo.png" alt=" ">
         </a>
     </figure>
     <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="#" class="active">O nama</a></li>
+        <li><a href="onama.html">O nama</a></li>
         <li><a href="#">Kontakt</a></li>
 		<li><a href="unos.html">Predaj oglas</a></li>
 		<li><a href="proizvodi.php">Proizvodi</a></li>
     </ul>
 </nav>
-<div id="main_content">
-    <main>
-        <h1>Najbolji web shop u regionu i šire</h1>
-        <p>
-            Raznovrsna ponuda nove, rabljene i ukradene robe po najpovoljnijim cijenama. Omogućujemo anonimnu kupovinu za one koji žele ostati anonimni ili objavu na facebook-u za one koji se moraju pohvaliti.
-        </p>
-    </main>
-</div>
-<div class="footer-spacing"> </div>
-    <footer class="clear_floating">
-        <p> Mate M.</p>
-        <p>Kontakt: <a href="mailto:mmisic@tvz.hr" target="_top">mmisic@tvz.hr</a></p>
-        <p id="last"><a href="unos.html">Predaj oglas</a></p>
-    </footer>
-</body>
-</html>
+';
+
+?>
