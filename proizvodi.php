@@ -16,7 +16,7 @@
 
 	$sql = "SELECT * FROM oglasitbl WHERE active=1";
 	$result = $conn->query($sql);
-
+echo '<div class="wrapper">';
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
@@ -31,6 +31,6 @@
 		echo "0 results";
 	}
 	$conn->close();
-	
+	echo'<div style="clear:both"></div></div>';
 require_once("printFooter.php");
 ?>
