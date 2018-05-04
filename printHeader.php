@@ -20,7 +20,7 @@
     </figure>
 	
     <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="onama.html">O nama</a></li>
         <li><a href="#">Kontakt</a></li>
 		<li><a href="unos.html">Predaj oglas</a></li>
