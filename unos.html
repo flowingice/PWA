@@ -6,9 +6,11 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="style.css" />
     <link rel="icon" href="/img/circle_logo_fav.png" type="image/gif" sizes="16x16">
-    <title>Ehop</title>
+    <title>Eshop</title>
+
 </head>
 <body>
+
 <nav>
     <figure class="float_left">
         <a href="index.html">
@@ -49,11 +51,12 @@
 			<label for="cijena">Cijena proizvoda:</label>
             <input id="cijena" type="text" name="cijena" required/>
             <br>
-			Slika: <br><input type="file" id="picture" name="slika" /><br><br>
+			Slika: <br><input type="file" id="picture" name="slika" required/><br><br>
 			
-            <input type="checkbox" name="arhiviraj" value="arhiviraj" title="arhiviraj"/>Arhiviraj
+            <input type="checkbox" name="arhiviraj" id="arhiviraj" value="arhiviraj" title="arhiviraj"/>Arhiviraj
 			<br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="predaj">
+			
         </form>
 
 </div>
@@ -63,5 +66,41 @@
         <p>Kontakt: <a href="mailto:mmisic@tvz.hr" target="_top">mmisic@tvz.hr</a></p>
         <p id="last"><a href="unos.html">Predaj oglas</a></p>
     </footer>
+<script type="text/javascript">
+document.getElementById("predaj").onclick = function (event) {
+	var slanje_forme=true;
+	naslov = document.getElementById("naslov");
+	if (naslov.value.length < 5 || naslov.value.length > 30){
+		naslov.style.border="2px solid red";
+		slanje_forme = false;
+	}else{
+		naslov.style.border="1px solid black";}
+		
+	sifra = document.getElementById("sifra");
+	if(sifra.value.length != 10){
+		sifra.style.border="2px solid red";
+		slanje_forme=false;
+	}else{
+		naslov.style.border="1px solid black";
+	}
+	
+	cijena = document.getElementById("cijena");
+	if(cijena.value.length < 1){
+		cijena.style.border="2px solid red";
+		slanje_forme=false;
+	}else{
+		cijena.style.border="1px solid black";
+	}
+	
+	if(document.getElementById("arhiviraj").checked==true){
+		var a = confirm("Jeste li sigurni da zelite arhivirati");
+		if (a == false){
+			slanje_forme=false;
+		}
+	}
+//kod koji ispituje da li treba slati formu
+	if (slanje_forme!=true) event.preventDefault();
+}
+</script>
 </body>
 </html>

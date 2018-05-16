@@ -26,6 +26,7 @@
 		<li><a href="unos.html">Predaj oglas</a></li>
 		<li><a href="proizvodi.php">Proizvodi</a></li>
 		<li><a href="administrator.php">Admin</a></li>
+		<li><a href="registracija.php">Registracija</a></li>
     </ul>
 </nav>
 <div style="clear:both"></div>
