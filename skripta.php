@@ -1,4 +1,5 @@
 <?php
+header('X-XSS-Protection:0');
 
 	
 	// Required field names
@@ -68,8 +69,12 @@
 
  
 
-
-    echo '
+	$naslov =  (htmlspecialchars ($naslov));
+    $sifra =  (htmlspecialchars ($sifra));
+    $kategorija =  (htmlspecialchars ($kategorija));
+    $opis =  (htmlspecialchars ($opis));
+	$cijena =  (htmlspecialchars ($cijena));
+    echo'
 
 
 <div id="main_content">
@@ -92,11 +97,11 @@
 
 
 
-	$naslov = urlencode($naslov);
-    $sifra = urlencode($sifra);
-    $kategorija = urlencode($kategorija);
-    $opis = urlencode($opis);
-	$cijena = urlencode($cijena);
+	$naslov = urlencode ( ($naslov));
+    $sifra = urlencode ( ($sifra));
+    $kategorija = urlencode ( ($kategorija));
+    $opis = urlencode ( ($opis));
+	$cijena = urlencode ( ($cijena));
 	
 	$servername = "localhost";
 	$username = "root";

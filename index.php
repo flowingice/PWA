@@ -12,7 +12,7 @@ $servername = "localhost";
 		die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "SELECT * FROM oglasitbl ORDER BY RAND() LIMIT 4";
+	$sql = "SELECT * FROM oglasitbl where active='1' ORDER BY RAND() LIMIT 4";
 	$result = $conn->query($sql);
 	
 echo '<!DOCTYPE html>
