@@ -1,5 +1,5 @@
 	<?php    
-
+session_start();
 	echo '
 <!DOCTYPE html>
 <html lang="hr">
@@ -27,6 +27,7 @@
 		<li><a href="proizvodi.php">Proizvodi</a></li>
 		<li><a href="administrator.php">Admin</a></li>
 		<li><a href="registracija.php">Registracija</a></li>
+		<li><a href="prijava.php">Prijava</a></li>
     </ul>
 </nav>
 <div style="clear:both"></div>

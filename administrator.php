@@ -1,8 +1,10 @@
 <?php
+	
+	
 
 	require_once("printHeader.php");
 	
-
+if($_SESSION["isAdmin"] == 1){
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -14,6 +16,9 @@
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} 
+	
+		
+	
 	if ( !empty($_POST) ) {
 		if(isset($_POST["DELETE_FILE"])){
 			$sql='DELETE FROM `oglasitbl` WHERE `oglasitbl`.`id` ='.$_POST["DELETE_FILE"].' ;';
@@ -23,6 +28,7 @@
 			$sql='UPDATE `oglasitbl` SET `active` = (active^1) WHERE `oglasitbl`.`id` ='.$_POST["UPDATE_FILE"].' ;';
 			
 		}
+		
 		$conn->query($sql);
 	}
 
@@ -63,6 +69,11 @@ echo '<div class="wrapper">';
 		echo "0 results";
 	}
 	$conn->close();
+}else{
+	echo '<div style="padding-left:50px"><p>Potrebna je prijava sa administratorskim računom za pristup stranici.</p>
+			<p>Prijavite se <a href="prijava.php">OVDJE</a></div>';
+	
+}
 	echo'<div style="clear:both"></div></div>';
 require_once("printFooter.php");
 ?>
