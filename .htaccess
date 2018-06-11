@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+Redirect 301 /index.html /index.php
+FallbackResource /fallback.html
+RewriteRule ^index\.html?$ / [NC,R,L,QSA]
