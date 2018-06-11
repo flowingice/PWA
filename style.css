@@ -1,13 +1,43 @@
 *{
     font-family: 'Open Sans', sans-serif;
+	word-wrap: break-word;
+	margin:0;
+	padding:0;
+		
+}
+
+.wrapper{
+	margin:auto;
+	width:90%;
 }
 
 .oglas{
-	width:23%;
+	padding:10px;
+	height:300px;
+	overflow: hidden;
+	word-wrap: break-word;
+	width:22%;
 	min-width:150px;
 	float:left;
 	border: 2px solid black;
 	margin-left:8px;
+	margin-top:15px;
+	margin-bottom: 10px;
+	//padding-left:20px;
+	//overflow:none;
+}
+
+.admin_oglas{
+	padding:10px;
+	height:200px;
+	overflow: hidden;
+	word-wrap: break-word;
+	width:85%;
+	min-width:150px;
+	float:left;
+	border: 2px solid black;
+	margin-left:8px;
+	margin-top:15px;
 	margin-bottom: 10px;
 	//padding-left:20px;
 	//overflow:none;
@@ -22,11 +52,52 @@
 	text-align:center;
 }
 
+.admin_command{
+	width:13%;
+	float:right;
+}
+
+.admin_wrapper>img{
+	padding-left:30px;
+	//display:block;
+	margin:auto;
+	//margin-left:-20px;
+	height:72px;
+	width:72px;
+}
+
+.admin_oglas>.admin_wrapper>p{
+	padding-left:20px;
+	
+	//overflow:none;
+}
+
+.admin_oglas>h4{
+	text-align:center;
+}
+
+.admin_oglas>img{
+	margin-left:30px;
+	//display:block;
+	margin:auto;
+	//margin-left:-20px;
+	height:48px;
+	width:48px;
+	//clear:both;
+}
+
 .oglas>img{
 	//margin-left:30px;
 	display:block;
 	margin:auto;
 	//margin-left:-20px;
+	height:72px;
+	width:72px;
+	margin-bottom:20px;
+}
+.admin_wrapper{
+	width:80%;
+	float:left;
 }
 
 html{
@@ -140,7 +211,7 @@ footer{
     color: white;
     background-color: #6552;
 	opacity:1;
-    //position:fixed;
+    position:fixed;
     bottom:0;
 }
 
@@ -171,7 +242,9 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+	margin-bottom:50px;
 }
+
 
 input[type=submit]:hover {
     background-color: #45a049;
@@ -221,7 +294,26 @@ body > nav > figure{
         width: 100%;
         margin: auto;
     }
+
+.admin_command>.forma>input[type=submit] {
+	margin-bottom:20px;
+	margin-left:-40px;
+}
 	input[type=submit] {
 		margin-bottom:120px;
 	}
+	.oglas{
+	height:400px;
+	overflow: hidden;
+	word-wrap: break-word;
+	width:95%;
+	min-width:150px;
+	float:left;
+	border: 2px solid black;
+	margin-left:8px;
+	margin-top:15px;
+	margin-bottom: 10px;
+	//padding-left:20px;
+	//overflow:none;
+}
 }
